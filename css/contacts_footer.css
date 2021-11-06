@@ -1,0 +1,228 @@
+    /* contacts */
+    
+    .contacts__info {
+        display: flex;
+    }
+    
+    .contacts__form {
+        padding-top: 128px;
+        padding-left: calc((100vw - 1600px)/2 - 0px);
+        padding-right: 120px;
+        padding-bottom: 120px;
+        border: 1px solid #CACACA;
+    }
+    
+    .form__nameshop {
+        margin-bottom: 10px;
+        font-family: 'OpenSans';
+        font-weight: 600;
+        font-size: 24px;
+    }
+    
+    .form__nameaddress {
+        margin-bottom: 39px;
+        font-family: 'OpenSans';
+        font-size: 16px;
+    }
+    
+    .form__client__info {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .client__info__order {
+        margin-bottom: 18px;
+        font-family: 'OpenSans';
+        font-weight: 400;
+        font-size: 24px;
+    }
+    
+    .client__info-field {
+        padding: 10px 40px 10px 24px;
+        min-width: 400px;
+        border-radius: 100px;
+        color: var(--color-grey);
+        border: 1px solid #333333;
+        cursor: pointer;
+    }
+    
+    .client__name {
+        margin-bottom: 20px;
+    }
+    
+    .client__phone {
+        margin-bottom: 22px;
+    }
+    
+    .myname+.js-validate-error-label {
+        position: absolute;
+        white-space: nowrap;
+        color: #FF5C00;
+        bottom: 185px;
+    }
+    
+    .mytel+.js-validate-error-label {
+        position: absolute;
+        white-space: nowrap;
+        color: #FF5C00;
+        bottom: 124px;
+    }
+    
+    .add__client {
+        position: relative;
+        border: 2px solid var(--color-purple);
+        border-radius: 100px;
+        background-color: transparent;
+        max-width: 157px;
+        padding: 19px 35px;
+        font-family: 'OpenSans';
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--color-purple);
+    }
+    
+    .add__client::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: -6px;
+        border-radius: 100px;
+        border: 3px solid transparent;
+        height: calc(100% + 10px);
+        width: calc(100% + 12px);
+    }
+    
+    .contacts__messanger {
+        margin-bottom: 17px;
+        font-family: 'OpenSans';
+        font-weight: 400;
+        font-size: 24px;
+    }
+    
+    .messanger__link {
+        display: flex;
+    }
+    
+    .link__whatsup {
+        margin-right: 17px;
+    }
+    
+    .social {
+        width: 40px;
+        height: 40px;
+        border: .5px solid transparent;
+        border-radius: 100%;
+    }
+    
+    [class*="ymaps-2"][class*="-ground-pane"] {
+        filter: grayscale(1);
+    }
+    
+    .map {
+        width: 100%;
+        height: 100%;
+        min-height: 700px;
+    }
+    
+    .ymaps-2-1-79-map {
+        min-height: 700px;
+    }
+    
+    .ymaps-2-1-79-zoom {
+        top: 270px;
+    }
+    
+    .ymaps-2-1-79-_hidden-text {
+        top: 350px;
+    }
+    
+    .ymaps-2-1-79-float-button {
+        border: 10px;
+    }
+    /* footer */
+    
+    .section-footer {
+        background-color: var(--color-dark);
+        color: var(--color-white);
+    }
+    
+    .section-footer__container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    
+    .footer__social {
+        margin-top: 3px;
+    }
+    
+    .messanger-footer:not(:last-child) {
+        margin-right: 16px;
+    }
+    
+    .social-footer {
+        width: 45px;
+        height: 45px;
+        fill: #CACACA;
+    }
+    /* hover focus active */
+    
+    .social:hover {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        opacity: 0.5;
+    }
+    
+    .social:focus {
+        filter: none;
+        opacity: 0.5;
+    }
+    
+    .social:active {
+        filter: none;
+        opacity: 0.5;
+        border: .5px solid var(--color-hover);
+    }
+    
+    .social-footer:hover,
+    .social-footer:focus {
+        fill: var(--color-white);
+    }
+    
+    .social-footer:active {
+        fill: var(--color-active);
+    }
+    
+    .add__client:hover {
+        border: 2px solid var(--color-active);
+        background-color: var(--color-hover);
+        color: var(--color-white);
+    }
+    
+    .add__client:focus::before {
+        border: 2px solid var(--color-active);
+    }
+    
+    .add__client:focus {
+        border: 2px solid #D1A9F0;
+        background-color: var(--color-white);
+        color: var(--color-hover);
+    }
+    
+    .add__client:active::before {
+        border: 2px solid var(--color-active);
+    }
+    
+    .add__client:active {
+        border: 2px solid #D1A9F0;
+        background-color: var(--color-hover);
+        color: var(--color-white);
+    }
+    
+    .client__info-field:hover,
+    .client__info-field:focus {
+        background-color: #EAEAEA;
+    }

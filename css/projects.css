@@ -1,0 +1,307 @@
+/* projects */
+
+.projects__title {
+    margin-bottom: 24px;
+}
+
+.section-projects {
+    margin-bottom: 82px;
+}
+
+.projects__info {
+    margin-bottom: 20px;
+}
+
+.tultip {
+    display: inline-block;
+    top: 3px;
+    width: 16px;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.tultip__info {
+    display: inline-block;
+    text-align: center;
+    font-family: 'OpenSans';
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    background: var(--color-purple);
+    color: var(--color-white);
+    width: max-content;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    transform: translate(-50%);
+}
+
+.tultip__info-first {
+    top: -65px;
+    max-width: 268px;
+    padding: 8px 5px 8px 5px;
+    line-height: 20px;
+    left: 50%;
+    right: 50%;
+}
+
+.tultip__info-second {
+    top: -74px;
+    max-width: 268px;
+    padding: 9px 10px 9px 10px;
+    line-height: 15px;
+    left: 42%;
+    right: 58%;
+}
+
+.tultip__info-third {
+    top: -45px;
+    max-width: 230px;
+    padding: 9px 12px 9px 12px;
+    line-height: 15px;
+    left: 50%;
+    right: 50%;
+}
+
+.tultip__info::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--color-purple);
+    left: 48%;
+    bottom: -3px;
+    transform: rotate(135deg);
+}
+
+.tultip:hover .tultip__info,
+.tultip:focus .tultip__info {
+    opacity: 1;
+}
+
+.project__web-address {
+    cursor: pointer;
+    color: var(--color-purple);
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+}
+
+.projects__partners {
+    font-family: 'OpenSans';
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.swiper__block-projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.swiper-projects {
+    overflow: hidden;
+    max-width: 1450px;
+    position: relative;
+    width: 100%;
+}
+
+.slide-projects {
+    max-width: 450px;
+    height: 150px;
+}
+
+.slide-projects1 {
+    background: url(../img/изданиясвайпер/слайдер1.webp);
+}
+
+.slide-projects2 {
+    background: url(../img/изданиясвайпер/слайдер2.webp);
+}
+
+.slide-projects3 {
+    background: url(../img/изданиясвайпер/слайдер3.webp);
+}
+
+.slide-projects4 {
+    background: url(../img/изданиясвайпер/слайдер4.webp);
+}
+
+.slide-projects5 {
+    background: url(../img/изданиясвайпер/слайдер5.webp);
+}
+
+.slide-projects6 {
+    background: url(../img/изданиясвайпер/слайдер6.webp);
+}
+
+.slide-projects7 {
+    background: url(../img/изданиясвайпер/слайдер7.webp);
+}
+
+.slide-projects8 {
+    background: url(../img/изданиясвайпер/слайдер8.webp);
+}
+
+.slide-projects9 {
+    background: url(../img/изданиясвайпер/слайдер9.webp);
+}
+
+.projects-btn--prev,
+.projects-btn--next {
+    background-color: transparent;
+    position: relative;
+    border: none;
+    color: transparent;
+}
+
+
+/* стрелки свайпер  */
+
+.projects-btn--prev::before {
+    content: " ";
+    position: absolute;
+    right: 25px;
+    top: 70px;
+    border: solid var(--color-white);
+    border-width: 0 1px 1px 0;
+    padding: 4px;
+    transform: rotate(135deg);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.projects-btn--prev::after {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    width: 30px;
+    height: 30px;
+    background: rgba(102, 102, 102, 1);
+    border-radius: 100%;
+    overflow-y: visible;
+}
+
+.projects-btn--next::before {
+    content: " ";
+    position: absolute;
+    right: 12px;
+    top: 70px;
+    border: solid var(--color-white);
+    border-width: 0 1px 1px 0;
+    padding: 4px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.projects-btn--next::after {
+    content: " ";
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    width: 30px;
+    height: 30px;
+    background: rgba(102, 102, 102, 1);
+    border-radius: 100%;
+    overflow-y: visible;
+}
+
+.tultip__svg {
+    border: 1px solid transparent;
+    border-radius: 100%;
+}
+
+
+/* hover focus active */
+
+.tultip__svg:hover,
+.tultip__svg:focus {
+    background-color: #9D5CD0;
+    border: 1px solid var(--color-hover);
+}
+
+.tultip__svg:active {
+    background-color: #9D5CD0;
+    border: 1px solid transparent;
+    stroke: var(--color-white);
+}
+
+.project__web-address:hover {
+    color: var(--color-hover);
+    border-bottom: 1px solid var(--color-hover);
+}
+
+.project__web-address:active {
+    color: var(--color-active);
+    border-bottom: 1px solid var(--color-active);
+}
+
+.project__web-address:focus {
+    background-color: var(--color-hover);
+    color: var(--color-white);
+    border-bottom: 1px solid transparent;
+}
+
+.slide-projects,
+.project__web-address,
+.tultip__svg {
+    transition: background, color, background-color, border-bottom, border, stroke;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+}
+
+.slide-projects1:hover,
+.slide-projects1:focus,
+.slide-projects1:active {
+    background: url(../img/изданиясвайпер/слайдер1ховер.webp);
+}
+
+.slide-projects2:hover,
+.slide-projects2:focus,
+.slide-projects2:active {
+    background: url(../img/изданиясвайпер/слайдер2ховер.webp);
+}
+
+.slide-projects3:hover,
+.slide-projects3:focus,
+.slide-projects3:active {
+    background: url(../img/изданиясвайпер/слайдер3ховер.webp);
+}
+
+.slide-projects4:hover,
+.slide-projects4:focus,
+.slide-projects4:active {
+    background: url(../img/изданиясвайпер/слайдер4ховер.webp);
+}
+
+.slide-projects5:hover,
+.slide-projects5:focus,
+.slide-projects5:active {
+    background: url(../img/изданиясвайпер/слайдер5ховер.webp);
+}
+
+.slide-projects6:hover,
+.slide-projects6:focus,
+.slide-projects6:active {
+    background: url(../img/изданиясвайпер/слайдер6ховер.webp);
+}
+
+.slide-projects7:hover,
+.slide-projects7:focus,
+.slide-projects7:active {
+    background: url(../img/изданиясвайпер/слайдер7ховер.webp);
+}
+
+.slide-projects8:hover,
+.slide-projects8:focus,
+.slide-projects8:active {
+    background: url(../img/изданиясвайпер/слайдер8ховер.webp);
+}
+
+.slide-projects9:hover,
+.slide-projects9:focus,
+.slide-projects9:active {
+    background: url(../img/изданиясвайпер/слайдер9ховер.webp);
+}

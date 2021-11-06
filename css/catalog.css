@@ -1,0 +1,391 @@
+   /* catalog */
+   
+   .section-catalog {
+       margin-bottom: 83px;
+   }
+   
+   .catalog__total {
+       display: flex;
+   }
+   
+   .catalog__title {
+       padding-right: 39px;
+       margin-bottom: 23px;
+   }
+   
+   .catalog__tabs {
+       display: flex;
+       margin-top: 10px;
+       margin-bottom: 0;
+   }
+   
+   .catalog__tabs-btn {
+       width: 46px;
+       height: 46px;
+       border: none;
+       cursor: pointer;
+   }
+   
+   .catalog__tabs-item:not(:last-child) {
+       padding-right: var(--catalog-gap);
+   }
+   
+   .catalog__tabs-btn {
+       position: relative
+   }
+   
+   .catalog__tabs-btn:after {
+       content: '';
+       position: absolute;
+       width: 66px;
+       height: 66px;
+       top: -11px;
+       left: -11px;
+       border: 2px solid transparent;
+       border-radius: 50%;
+   }
+   
+   .catalog__tabs-btn:before {
+       content: '';
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       width: 46px;
+       height: 46px;
+       border: 2px solid transparent;
+       border-radius: 50%;
+   }
+   
+   .active__butt.catalog__tabs-btn:after {
+       border: 2px solid var(--color-purple);
+   }
+   
+   .tabs-content__information {
+       margin-bottom: 40px;
+   }
+   
+   .catalog__tabs1 {
+       background: url(../img/каталог/франция.png) no-repeat;
+   }
+   
+   .catalog__tabs2 {
+       background: url(../img/каталог/германия.png) no-repeat;
+   }
+   
+   .catalog__tabs3 {
+       background: url(../img/каталог/италия.png) no-repeat;
+   }
+   
+   .catalog__tabs4 {
+       background: url(../img/каталог/россия.png) no-repeat;
+   }
+   
+   .catalog__tabs5 {
+       background: url(../img/каталог/испания.png) no-repeat;
+   }
+   
+   .tabs-content__allpainters {
+       display: flex;
+       justify-content: space-between;
+   }
+   
+   .allpainters__picture {
+       width: 750px;
+       height: 470px;
+       margin-bottom: 30px;
+   }
+   
+   .catalog__picture100 {
+       background: url(../img/каталог/табы/Гирландайо.webp) no-repeat;
+   }
+   
+   .catalog__picture10 {
+       background: url(../img/каталог/табы/Биндо.webp) no-repeat;
+   }
+   
+   .catalog__picture11 {
+       background: url(../img/каталог/табы/Амброджо.webp) no-repeat;
+   }
+   
+   .catalog__picture12 {
+       background: url(../img/каталог/табы/Биссоло.webp) no-repeat;
+   }
+   
+   .catalog__picture13 {
+       background: url(../img/каталог/табы/Джованни.webp) no-repeat;
+   }
+   
+   .catalog__picture14 {
+       background: url(../img/каталог/табы/Франческо.webp) no-repeat;
+   }
+   
+   .catalog__picture20 {
+       background: url(../img/каталог/табы/Биндо.webp) no-repeat;
+   }
+   
+   .allpainters__paintername {
+       font-family: 'OpenSans';
+       font-weight: 600;
+       font-size: 24px;
+       margin-bottom: 15px;
+   }
+   
+   .allpainters__painteryears {
+       font-size: 12px;
+       color: #999999;
+       margin-bottom: 8px;
+   }
+   
+   .allpainters__painterbiography {
+       max-width: 749px;
+   }
+   /* accordion */
+   
+   .allpainter__interval {
+       flex-basis: 50%;
+   }
+   
+   .interval-accordion__header {
+       width: 100%;
+   }
+   
+   .ui-accordion .ui-accordion-header {
+       position: relative;
+       margin: 0;
+       display: flex;
+       padding: 41px 0px 45px 0px;
+       background-color: var(--color-white);
+       border: none;
+       border-top: 1px solid var(--color-dark);
+       font-family: 'OpenSans';
+       font-weight: 600;
+       font-size: 24px;
+       color: var(--color-dark);
+   }
+   
+   #ui-id-13,
+   #ui-id-14,
+   #ui-id-27,
+   #ui-id-28,
+   #ui-id-41,
+   #ui-id-42,
+   #ui-id-55,
+   #ui-id-56,
+   #ui-id-69,
+   #ui-id-70 {
+       border-bottom: 1px solid var(--color-dark)
+   }
+   
+   .ui-accordion .ui-accordion-header-active {
+       border-bottom: 1px solid var(--color-dark);
+   }
+   
+   .ui-accordion .ui-accordion-content {
+       padding: 25px 62px 25px 0;
+   }
+   
+   .ui-icon {
+       background-image: none;
+       display: none;
+   }
+   
+   .ui-state-active .ui-icon {
+       background-image: none;
+   }
+   
+   .ui-state-focus .ui-icon {
+       background-image: none;
+   }
+   
+   .ui-state-hover .ui-icon {
+       background-image: none;
+   }
+   
+   .ui-accordion .ui-accordion-header::before {
+       content: " ";
+       position: absolute;
+       top: 30px;
+       right: 0;
+       width: 50px;
+       height: 50px;
+       border-radius: 100%;
+       background: rgba(236, 236, 236, 1);
+   }
+   
+   .ui-accordion .ui-accordion-header::after {
+       content: " ";
+       position: absolute;
+       right: 20px;
+       top: 45px;
+       padding: 5px;
+       border: solid rgba(0, 0, 0, 1);
+       border-width: 0 1px 1px 0;
+       transform: rotate(45deg);
+       transition: .8s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+   }
+   
+   .ui-state-active.ui-accordion-header::after {
+       transition: 0.8s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+       transform: rotate(-135deg);
+       top: 50px;
+   }
+   
+   .interval-accordion__text {
+       display: flex;
+       flex-direction: column;
+       flex-wrap: wrap;
+       margin: 0;
+       height: 343px;
+       border: none;
+   }
+   
+   .interval-accordion__item {
+       width: fit-content;
+       font-family: 'OpenSans';
+       line-height: 32px;
+   }
+   
+   .interval-accordion__but {
+       background-color: transparent;
+       border: none;
+       padding: 0;
+       font-weight: 400;
+       font-size: 16px;
+       letter-spacing: 0.2px;
+   }
+   /* tabs */
+   
+   .inside__tabcontent,
+   .outside__tabcontent {
+       display: none;
+   }
+   
+   .inside__tabcontent-active,
+   .outside__tabcontent-active {
+       display: block;
+   }
+   
+   .active-name {
+       color: var(--color-purple);
+   }
+   /* hover active focus swiper*/
+   /* 
+   hover */
+   
+   .interval-accordion__header-new:hover {
+       border: 0px solid transparent;
+       color: var(--color-hover);
+       border-top: 1px solid var(--color-hover);
+   }
+   
+   .ui-accordion .ui-accordion-header-active:hover {
+       border-bottom: 1px solid var(--color-hover);
+   }
+   
+   .interval-accordion__header-new:hover+ul+button {
+       border-top: 1px solid var(--color-hover);
+   }
+   
+   .ui-accordion .ui-accordion-header-active:hover+ul+button {
+       border-top: 1px solid var(--color-dark);
+   }
+   
+   .interval-accordion__text:hover+button {
+       border-top: 1px solid var(--color-hover);
+   }
+   
+   #ui-id-13:hover,
+   #ui-id-14:hover,
+   #ui-id-27:hover,
+   #ui-id-28:hover,
+   #ui-id-41:hover,
+   #ui-id-42:hover,
+   #ui-id-55:hover,
+   #ui-id-56:hover,
+   #ui-id-69:hover,
+   #ui-id-70:hover {
+       border-bottom: 1px solid var(--color-hover);
+   }
+   
+   .ui-accordion .ui-accordion-header:hover:before {
+       background: var(--color-hover)
+   }
+   /* active */
+   
+   .ui-accordion .ui-accordion-header:active:before {
+       background: var(--color-hover);
+       border: 3px solid var(--color-active)
+   }
+   /* focus */
+   
+   .ui-accordion .ui-accordion-header:focus:before {
+       background: var(--color-purple)
+   }
+   
+   .ui-accordion .ui-accordion-header:focus {
+       color: var(--color-active);
+       border-top: 1px solid var(--color-active);
+   }
+   
+   .ui-accordion .ui-accordion-header-active:focus {
+       border-bottom: 1px solid var(--color-active);
+   }
+   
+   .interval-accordion__header-new:focus+ul+button {
+       border-top: 1px solid var(--color-active);
+   }
+   
+   .ui-accordion .ui-accordion-header-active:focus+ul+button {
+       border-top: 1px solid var(--color-dark);
+   }
+   
+   .interval-accordion__text:hover+button {
+       border-top: 1px solid var(--color-active);
+   }
+   
+   #ui-id-13:focus,
+   #ui-id-14:focus,
+   #ui-id-27:focus,
+   #ui-id-28:focus,
+   #ui-id-41:focus,
+   #ui-id-42:focus,
+   #ui-id-55:focus,
+   #ui-id-56:focus,
+   #ui-id-69:focus,
+   #ui-id-70:focus {
+       border-bottom: 1px solid var(--color-active);
+   }
+   
+   .ui-accordion .ui-accordion-header:focus:before {
+       background: var(--color-active)
+   }
+   /* hover active focus*/
+   
+   .catalog__tabs-btn:hover,
+   .catalog__tabs-btn:focus {
+       filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
+   }
+   
+   .catalog__tabs-btn:active:before {
+       border: 2px solid var(--color-active);
+   }
+   
+   .active__butt.catalog__tabs-btn:focus {
+       filter: none;
+   }
+   
+   .interval-accordion__but:hover {
+       color: var(--color-hover);
+       border-bottom: 1px solid var(--color-hover);
+   }
+   
+   .interval-accordion__but:focus {
+       background-color: var(--color-hover);
+       color: var(--color-white);
+   }
+   
+   .interval-accordion__but:active {
+       color: var(--color-active);
+       background-color: transparent;
+       border: none;
+   }

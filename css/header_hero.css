@@ -1,0 +1,563 @@
+ /* header */
+ 
+ .section-header {
+     padding: 23px 0;
+     color: var(--color-white);
+     background-color: var(--color-dark);
+ }
+ 
+ .section-header__container,
+ .section-navigation__container {
+     display: flex;
+     align-items: center;
+     position: relative;
+ }
+ 
+ .section-header__list,
+ .section-navigation__list {
+     display: flex;
+ }
+ 
+ .section-header__main {
+     margin-right: 176px;
+ }
+ 
+ .section-header__main__secondline {
+     margin-top: -12px;
+     font-weight: 300;
+     letter-spacing: -0.8px;
+ }
+ 
+ .section-header__main__firstline {
+     margin-left: -2px;
+     font-size: 33px;
+     font-weight: 600;
+     letter-spacing: 2.8px;
+ }
+ 
+ .section-header__list {
+     padding: 0;
+ }
+ 
+ .section-header__item {
+     font-family: 'OpenSans';
+     font-weight: 600;
+     font-size: 18px;
+ }
+ 
+ .section-header__item:not(:last-child) {
+     margin-right: var(--header-gap);
+ }
+ 
+ .section-header__nav {
+     margin-right: auto;
+ }
+ 
+ .section-header__enter {
+     border-color: transparent;
+     cursor: pointer;
+ }
+ 
+ .section-header__enter-text {
+     padding-left: 2px;
+     font-family: 'OpenSans';
+     font-size: 18px;
+     color: var(--color-white);
+ }
+ /* main section-hero */
+ 
+ .section-hero {
+     margin-bottom: 85px;
+     position: relative;
+     height: 700px;
+ }
+ 
+ .section-hero__container {
+     height: calc(100% - 142px);
+ }
+ 
+ .hero__info {
+     position: absolute;
+     top: 135px;
+     max-width: 597px;
+ }
+ 
+ .hero__title {
+     margin-bottom: 20px;
+     font-family: 'OpenSans';
+     font-weight: 700;
+     font-size: 72px;
+     color: var(--color-white);
+ }
+ 
+ .hero__text {
+     margin-bottom: 95px;
+     font-family: 'OpenSans';
+     font-weight: 700;
+     font-size: 18px;
+     line-height: 29px;
+     color: var(--color-white);
+ }
+ 
+ .hero__button {
+     position: relative;
+     padding: 22px 32px;
+     font-family: 'OpenSans';
+     font-weight: 700;
+     font-size: 18px;
+     border-radius: 100px;
+     color: var(--color-white);
+     background-color: var(--color-purple);
+     border: 3px solid transparent;
+     cursor: pointer;
+ }
+ 
+ .hero__button::before {
+     content: '';
+     display: block;
+     position: absolute;
+     top: -5px;
+     left: -5px;
+     border-radius: 100px;
+     border: 3px solid transparent;
+     height: calc(100% + 11px);
+     width: calc(100% + 11px);
+     z-index: 5;
+ }
+ 
+ .swiper-container {
+     height: 100%;
+     z-index: unset;
+ }
+ 
+ .swipe__main {
+     z-index: unset;
+     animation: scaling alternate 10s linear infinite;
+ }
+ 
+ .section-hero__background {
+     position: relative;
+     overflow: hidden;
+     height: 100%;
+ }
+ 
+ .swiper-slide__main {
+     background-repeat: no-repeat;
+     background-position: center;
+     width: 100%;
+     background-size: cover;
+ }
+ 
+ .swiper-slide__main1 {
+     background-image: url(../img/баннер1.webp);
+ }
+ 
+ .swiper-slide__main2 {
+     background-image: url(../img/баннер2.webp);
+ }
+ 
+ .swiper-slide__main3 {
+     background-image: url(../img/баннер3.webp);
+ }
+ 
+ @keyframes scaling {
+     0% {
+         transform: scale(1);
+     }
+     50% {
+         transform: scale(1.1);
+     }
+     100% {
+         transform: scale(1.2);
+     }
+ }
+ /* main section-navigation */
+ 
+ .section-navigation {
+     margin-bottom: 70px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     color: var(--color-white);
+     background-color: rgba(0, 0, 0, 0.4);
+ }
+ 
+ .section-navigation__link {
+     padding-right: 15px;
+     position: relative;
+     color: var(--color-white);
+     font-family: 'OpenSans';
+     font-weight: 400;
+     font-size: 18px;
+     letter-spacing: 0.2px;
+     cursor: pointer;
+ }
+ 
+ .section-navigation__item {
+     position: relative;
+ }
+ 
+ .section-navigation__item:not(:last-child) {
+     margin-right: var(--navigation-gap);
+ }
+ 
+ .section-navigation__link::after {
+     content: '';
+     position: absolute;
+     width: 7.07px;
+     height: 7.07px;
+     top: 30%;
+     border-right: 1px solid #ffffff;
+     border-bottom: 1px solid #ffffff;
+     transform: rotate(45deg);
+     right: 3px;
+ }
+ 
+ .active-arrow::after {
+     transform: rotate(225deg);
+     top: 40%;
+ }
+ 
+ .section-navigation__nav {
+     margin-right: auto;
+ }
+ 
+ .section-navigation__list {
+     margin-left: -2px;
+ }
+ 
+ .header__search {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .section-navigation__seacrch {
+     margin-top: 3px;
+     margin-right: 9px;
+     width: 22px;
+     height: 22px;
+     background-image: url(../img/search-nav.png);
+     background-repeat: no-repeat;
+ }
+ 
+ .section-navigation__input {
+     margin-bottom: -8px;
+     padding-right: 23px;
+     padding-left: 0px;
+     padding-bottom: 0px;
+     border: none;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+     color: var(--color-white);
+     font-size: 18px;
+     background: transparent;
+ }
+ 
+ .section-navigation__input::placeholder {
+     color: var(--color-white);
+ }
+ /* inside navmenu */
+ 
+ .inside__style {
+     width: var(--dropdown__inside-size-width);
+     height: var(--dropdown__inside-size-height);
+     font-family: 'OpenSans';
+     font-weight: 600;
+     font-size: 14px;
+ }
+ 
+ .inside__style:not(:last-child) {
+     margin-bottom: var(--dropdown__inside-gap);
+ }
+ 
+ .inside-menu__inside {
+     position: absolute;
+     top: 48px;
+     height: var(--dropdown-size);
+     width: var(--dropdown-size);
+     z-index: 5;
+     opacity: 0;
+     background-color: var(--color-dropdown);
+     transform: scaleY(0);
+     transform-origin: 0 0;
+     transition: .5s ease-in-out;
+ }
+ 
+ .inside__style__link {
+     padding-top: 0px;
+     padding-left: 14px;
+     cursor: pointer;
+     display: inline-block;
+     width: 100%;
+     height: 100%;
+     color: var(--color-white);
+     text-align: left;
+ }
+ 
+ .inside-menu__inside.is-active {
+     opacity: 1;
+     transform: scaleY(1);
+ }
+ 
+ .inside__style {
+     width: 100%;
+     background-repeat: no-repeat;
+ }
+ 
+ .real-style__1,
+ .real-style__5,
+ .real-style__9 {
+     background-image: url(../img/художники/реализм/тинторетто.jpg);
+ }
+ 
+ .real-style__2,
+ .real-style__6,
+ .real-style__10 {
+     background-image: url(../img/художники/реализм/фридрих.jpg);
+ }
+ 
+ .real-style__3,
+ .real-style__7 {
+     background-image: url(../img/художники/реализм/леонардо.jpg);
+ }
+ 
+ .real-style__4,
+ .real-style__8 {
+     background-image: url(../img/художники/реализм/вероккью.jpg);
+ }
+ 
+ .impression-style__1,
+ .impression-style__5,
+ .impression-style__9 {
+     background-image: url(../img/художники/импрессионизм/моне.jpg);
+ }
+ 
+ .impression-style__2,
+ .impression-style__6,
+ .impression-style__10 {
+     background-image: url(../img/художники/импрессионизм/сислей.jpg);
+ }
+ 
+ .impression-style__3,
+ .impression-style__7 {
+     background-image: url(../img/художники/импрессионизм/мане.jpg);
+ }
+ 
+ .impression-style__4,
+ .impression-style__8 {
+     background-image: url(../img/художники/импрессионизм/ренуар.jpg);
+ }
+ 
+ .postimpression-style__1,
+ .postimpression-style__5,
+ .postimpression-style__9 {
+     background-image: url(../img/художники/постимпрессионизм/Ван\ Гог.jpg);
+ }
+ 
+ .postimpression-style__2,
+ .postimpression-style__6,
+ .postimpression-style__10 {
+     background-image: url(../img/художники/постимпрессионизм/Сезанн.jpg);
+ }
+ 
+ .postimpression-style__3,
+ .postimpression-style__7 {
+     background-image: url(../img/художники/постимпрессионизм/Гоген.jpg);
+ }
+ 
+ .postimpression-style__4,
+ .postimpression-style__8 {
+     background-image: url(../img/художники/постимпрессионизм/Сёра.png);
+ }
+ 
+ .avangard-style__1,
+ .avangard-style__5,
+ .avangard-style__9 {
+     background-image: url(../img/художники/авангард/кандинский.jpg);
+ }
+ 
+ .avangard-style__2,
+ .avangard-style__6,
+ .avangard-style__10 {
+     background-image: url(../img/художники/авангард/маринетти.jpg);
+ }
+ 
+ .avangard-style__3,
+ .avangard-style__7 {
+     background-image: url(../img/художники/авангард/малевич.jpg);
+ }
+ 
+ .avangard-style__4,
+ .avangard-style__8 {
+     background-image: url(../img/художники/авангард/пикассо.jpg);
+ }
+ 
+ .futurism-style__1,
+ .futurism-style__5,
+ .futurism-style__9 {
+     background-image: url(../img/художники/футуризм/карра.jpg);
+ }
+ 
+ .futurism-style__2,
+ .futurism-style__6,
+ .futurism-style__10 {
+     background-image: url(../img/художники/футуризм/прателла.jpg);
+ }
+ 
+ .futurism-style__3,
+ .futurism-style__7 {
+     background-image: url(../img/художники/футуризм/северини.jpg);
+ }
+ 
+ .futurism-style__4,
+ .futurism-style__8 {
+     background-image: url(../img/художники/футуризм/балла.jpg);
+ }
+ 
+ .simplebar-offset {
+     padding: 40px;
+ }
+ 
+ .simplebar-scrollbar {
+     width: 2px;
+     background: var(--color-white);
+     border-radius: 2px;
+ }
+ 
+ .simplebar-scrollbar::before {
+     background: var(--color-white);
+ }
+ 
+ .simplebar-track.simplebar-vertical {
+     top: 40px;
+     bottom: 40px;
+     right: 19px;
+     width: 2px;
+     border-radius: 2px;
+     background: var(--color-dark);
+ }
+ 
+ .enter__picture {
+     fill: white;
+ }
+ 
+ .flag__picture {
+     fill: white;
+ }
+ /* hover */
+ 
+ .section-header__item:hover,
+ .section-navigation__link:hover {
+     color: var(--color-hover);
+     transform: translateY(2px);
+ }
+ 
+ .inside__style__link:hover {
+     border: 1px solid var(--color-hover);
+ }
+ 
+ .section-header__item,
+ .section-navigation__link,
+ .section-navigation__link::after,
+ .section-navigation__input,
+ .inside__style__link,
+ .hero__button {
+     transition: transform, color, border-bottom, border;
+     transition-duration: .5s;
+     transition-timing-function: ease;
+ }
+ 
+ .section-navigation__link:hover::after {
+     border-right: 1px solid var(--color-hover);
+     border-bottom: 1px solid var(--color-hover);
+ }
+ 
+ .section-header__enter:hover .section-header__enter-text {
+     color: var(--color-hover);
+ }
+ 
+ .section-header__enter:hover .enter__picture {
+     fill: var(--color-hover);
+ }
+ 
+ .section-header__enter:hover {
+     transition-duration: .5s;
+     transition-timing-function: ease;
+     transform: translateY(2px);
+ }
+ 
+ .hero__button:hover {
+     border: 3px solid #D1A9F0;
+ }
+ /* focus */
+ 
+ .section-header__link:focus,
+ .section-header__enter:focus,
+ .section-navigation__link:focus {
+     outline: 2px solid var(--color-hover);
+     background-color: var(--color-active);
+ }
+ 
+ .inside__style__link:focus {
+     border: 1px solid var(--color-active);
+ }
+ 
+ .hero__button:focus {
+     border: 3px solid var(--color-white);
+ }
+ 
+ .hero__button:focus::before {
+     border: 3px solid var(--color-hover);
+ }
+ /* active */
+ 
+ .section-header__link:active,
+ .section-navigation__link:active {
+     color: var(--color-active);
+     outline: 0;
+     outline-offset: 0;
+     background-color: transparent;
+ }
+ 
+ .section-header__enter:active {
+     outline: 0;
+     outline-offset: 0;
+     background-color: transparent;
+ }
+ 
+ .section-header__enter:active .enter__picture {
+     fill: var(--color-active);
+ }
+ 
+ .section-header__enter:active .section-header__enter-text {
+     color: var(--color-active);
+ }
+ 
+ .section-navigation__link:active::after {
+     border-right: 1px solid var(--color-active);
+     border-bottom: 1px solid var(--color-active);
+ }
+ 
+ .inside__style__link:active {
+     border: 1px solid var(--color-active);
+     background-color: rgba(194, 131, 243, 0.4);
+ }
+ 
+ .hero__button:active {
+     border: 3px solid #D1A9F0;
+     background-color: var(--color-active);
+ }
+ 
+ .hero__button:active::before {
+     border: 3px solid transparent;
+ }
+ 
+ .section-navigation__input:hover,
+ .section-navigation__input:focus {
+     border-bottom: 1px solid var(--color-hover);
+ }
+ 
+ .section-navigation__input:active {
+     border-bottom: 1px solid var(--color-active);
+ }

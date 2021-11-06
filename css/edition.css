@@ -1,0 +1,359 @@
+.section-edition {
+    margin-bottom: 82px;
+    background: url(../img/издания.webp);
+}
+
+.section-edition__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 85px;
+    padding-bottom: 69px;
+}
+
+.edition__title {
+    margin: 0;
+    margin-bottom: 30px;
+    color: var(--color-white);
+}
+
+.title__edition {
+    margin-bottom: 13px;
+    font-family: 'OpenSans';
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-white);
+}
+
+.edition__type {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 42px;
+}
+
+.edition__check {
+    position: relative;
+    padding-left: 25px;
+    width: fit-content;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.edition__check:not(:last-child) {
+    margin-bottom: 13.9px;
+}
+
+.type-edition__check {
+    position: relative;
+    display: inline-block;
+}
+
+.edition__cheking {
+    position: absolute;
+    opacity: 0;
+}
+
+.edition-check__text::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 3px;
+    width: 13px;
+    height: 13px;
+    text-align: center;
+    border: 1px solid var(--color-white);
+    transition-duration: 0.3s;
+}
+
+.edition-check__text::after {
+    content: '';
+    position: absolute;
+    left: 4.5px;
+    top: 7.5px;
+    width: 4px;
+    height: 4px;
+    color: var(--color-purple);
+    border-radius: 50%;
+    background-color: var(--color-purple);
+    transition-duration: 0.3s;
+    opacity: 0;
+}
+
+.edition-check__text {
+    padding-left: 0px;
+    transition-duration: 0.3s;
+    color: var(--color-white);
+    font-size: 16px;
+}
+
+.filter__edition title {
+    margin-bottom: 10px;
+}
+
+.edition__price-filter {
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    width: fit-content;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.price-field {
+    padding-left: 7px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    max-width: 75px;
+    background-color: rgba(157, 92, 208, 0.5);
+    color: var(--color-white);
+    border: 1px solid transparent;
+}
+
+.price__end-field {
+    padding-right: 0px;
+}
+
+
+/* красим плейсхолдер */
+
+.price-field::placeholder {
+    color: var(--color-white);
+}
+
+.price-field::-webkit-input-placeholder {
+    color: var(--color-white);
+}
+
+.price-field::-ms-input-placeholder {
+    color: var(--color-white);
+}
+
+.price-field:-moz-placeholder {
+    color: var(--color-white);
+    opacity: 1;
+}
+
+.price-field::-moz-placeholder {
+    color: var(--color-white);
+    opacity: 1;
+}
+
+.price-field:-ms-input-placeholder {
+    color: var(--color-white);
+}
+
+
+/* -//- */
+
+.range-name {
+    padding-right: 7px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.price__start {
+    padding-left: 8px;
+}
+
+.price__end {
+    padding-left: 3px;
+}
+
+.price__value {
+    padding-left: 2px;
+    padding-right: 10px;
+}
+
+.edition-book1 {
+    background: url(../img/издания/издание1.webp) no-repeat;
+}
+
+.edition-book2 {
+    background: url(../img/издания/издание2.webp) no-repeat;
+}
+
+.edition-book3 {
+    background: url(../img/издания/издание3.webp) no-repeat;
+}
+
+.edition-book4 {
+    background: url(../img/издания/издание4.webp) no-repeat;
+}
+
+.edition-book5 {
+    background: url(../img/издания/издание5.webp) no-repeat;
+}
+
+.edition-book6 {
+    background: url(../img/издания/издание6.webp) no-repeat;
+}
+
+.edition-book7 {
+    background: url(../img/издания/издание7.webp) no-repeat;
+}
+
+.swiper-edition {
+    padding-left: 10px;
+    padding-top: 27px;
+    max-width: 1160px;
+    overflow: hidden;
+}
+
+.book__info {
+    padding-top: 418px;
+    padding-bottom: 10px;
+    color: var(--color-white);
+}
+
+.info__name__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.book__name {
+    font-family: 'OpenSans';
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.book__price {
+    font-family: 'OpenSansItalic';
+}
+
+.book__author {
+    margin-bottom: 15px;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.book__order {
+    position: relative;
+    padding: 8px 19px;
+    color: var(--color-white);
+    width: fit-content;
+    font-family: 'OpenSans';
+    font-weight: 700;
+    font-size: 16px;
+    border: 3px solid var(--color-purple);
+    border-radius: 100px;
+}
+
+.book__order::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -5px;
+    left: -5px;
+    border-radius: 100px;
+    border: 2px soltransparent;
+    height: calc(100% + 6px);
+    width: calc(100% + 6px);
+}
+
+.book__order::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -7px;
+    left: -7px;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    height: calc(100% + 10px);
+    width: calc(100% + 10px);
+}
+
+.swiper-edition-btns {
+    padding-top: 9px;
+    margin-bottom: 32px;
+    padding-left: 0px;
+}
+
+.swiper-btn--prev__edition-pos::before {
+    right: 25px;
+    top: 2px;
+}
+
+.swiper-btn--prev__edition-pos::after {
+    right: 14px;
+    top: -7px;
+}
+
+.swiper-btn--next__edition-pos::before {
+    right: 32px;
+    top: 2px;
+}
+
+.swiper-btn--next__edition-pos::after {
+    right: 18px;
+    top: -7px;
+}
+
+
+/* hover active focus */
+
+.edition__cheking:hover+.edition-check__text {
+    color: var(--color-purple)
+}
+
+.edition__cheking:hover+.edition-check__text::before {
+    border-color: var(--color-purple);
+}
+
+.edition__cheking:focus+.edition-check__text {
+    color: var(--color-purple)
+}
+
+.edition__cheking:focus+.edition-check__text::before {
+    border-color: var(--color-purple);
+}
+
+.edition__cheking:checked+.edition-check__text {
+    color: var(--color-purple);
+    outline: 1px solid var(--color-purple);
+}
+
+.edition__cheking:checked+.edition-check__text::after {
+    opacity: 1;
+}
+
+.edition__cheking:checked+.edition-check__text::before {
+    border-color: var(--color-purple);
+}
+
+.price-field:hover {
+    background-color: var(--color-hover)
+}
+
+.price-field:active {
+    background-color: var(--color-active)
+}
+
+.price-field:focus {
+    background-color: var(--color-hover);
+    border: 1px solid var(--color-white);
+}
+
+.book__order:focus::after {
+    border: 2px solid var(--color-hover);
+}
+
+.book__order:active::before {
+    border: 2px solid var(--color-white);
+}
+
+.book__order:active::after {
+    border: 2px solid transparent;
+}
+
+.book__order:hover {
+    background-color: var(--color-hover);
+    border: 3px solid transparent;
+}
