@@ -40,6 +40,10 @@
         scroll-behavior: smooth;
     }
     
+    .simplebar-content-wrapper {
+        overflow: auto;
+    }
+    
     @font-face {
         font-family: 'Muller';
         src: local(''), url('../fonts/MullerRegular.woff2') format('woff2'), url('../fonts/MullerRegular.woff') format('woff');
@@ -86,8 +90,8 @@
     
     .container {
         margin: 0 auto;
-        padding: 0 12px;
-        max-width: 1624px;
+        padding: 0 50px;
+        max-width: 1700px;
     }
     
     .btn {
@@ -96,6 +100,10 @@
         border: 0;
         background-color: unset;
         cursor: pointer;
+    }
+    
+    p {
+        margin: 0;
     }
     
     a:active,
@@ -158,4 +166,20 @@
         --dropdown__inside-size-width: 220px;
         --dropdown__inside-size-height: 40px;
         --gallery__card-size: 350px
+    }
+    
+    @media (max-width:1300px) {
+        .container {
+            margin: 0 auto;
+            padding: 0 50px;
+            max-width: 1026px;
+        }
+    }
+    
+    @media (max-width:885px) {
+        .container {
+            margin: 0 auto;
+            padding: 0 50px;
+            max-width: 769px;
+        }
     }

@@ -1,23 +1,33 @@
+.book-name1024 {
+    display: none;
+}
+
 .section-edition {
     margin-bottom: 82px;
     background: url(../img/издания.webp);
+    background-size: cover;
 }
 
 .section-edition__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 85px;
-    padding-bottom: 69px;
+    align-items: flex-start;
+    padding-top: 82px;
+    padding-bottom: 66px;
 }
 
-.edition__title {
+.edition-filter {
+    flex-basis: 25%;
+}
+
+.edition-title {
     margin: 0;
     margin-bottom: 30px;
     color: var(--color-white);
 }
 
-.title__edition {
+.title-edition {
     margin-bottom: 13px;
     font-family: 'OpenSans';
     font-weight: 700;
@@ -25,13 +35,13 @@
     color: var(--color-white);
 }
 
-.edition__type {
+.edition-type {
     display: flex;
     flex-direction: column;
     margin-bottom: 42px;
 }
 
-.edition__check {
+.edition-check {
     position: relative;
     padding-left: 25px;
     width: fit-content;
@@ -42,21 +52,16 @@
     color: var(--color-white);
 }
 
-.edition__check:not(:last-child) {
-    margin-bottom: 13.9px;
+.edition-check:not(:last-child) {
+    margin-bottom: 13.5px;
 }
 
-.type-edition__check {
-    position: relative;
-    display: inline-block;
-}
-
-.edition__cheking {
+.edition-cheking {
     position: absolute;
     opacity: 0;
 }
 
-.edition-check__text::before {
+.edition-check-text::before {
     content: '';
     position: absolute;
     display: inline-block;
@@ -69,11 +74,11 @@
     transition-duration: 0.3s;
 }
 
-.edition-check__text::after {
+.edition-check-text::after {
     content: '';
     position: absolute;
-    left: 4.5px;
-    top: 7.5px;
+    left: 4.8px;
+    top: calc(50% - 4px / 2);
     width: 4px;
     height: 4px;
     color: var(--color-purple);
@@ -83,25 +88,25 @@
     opacity: 0;
 }
 
-.edition-check__text {
+.edition-check-text {
     padding-left: 0px;
     transition-duration: 0.3s;
     color: var(--color-white);
     font-size: 16px;
 }
 
-.filter__edition title {
+.filter-edition title {
     margin-bottom: 10px;
 }
 
-.edition__price-filter {
-    color: var(--color-white);
-    border: 1px solid var(--color-white);
+.edition-price-filter {
     width: fit-content;
     font-family: 'OpenSans';
     font-weight: 400;
     font-size: 16px;
     border-radius: 5px;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
 }
 
 .price-field {
@@ -112,9 +117,10 @@
     background-color: rgba(157, 92, 208, 0.5);
     color: var(--color-white);
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
-.price__end-field {
+.price-end-field {
     padding-right: 0px;
 }
 
@@ -156,175 +162,176 @@
     padding-bottom: 8px;
 }
 
-.price__start {
+.price-start {
     padding-left: 8px;
 }
 
-.price__end {
+.price-end {
     padding-left: 3px;
 }
 
-.price__value {
+.price-value {
     padding-left: 2px;
     padding-right: 10px;
 }
 
-.edition-book1 {
-    background: url(../img/издания/издание1.webp) no-repeat;
-}
-
-.edition-book2 {
-    background: url(../img/издания/издание2.webp) no-repeat;
-}
-
-.edition-book3 {
-    background: url(../img/издания/издание3.webp) no-repeat;
-}
-
-.edition-book4 {
-    background: url(../img/издания/издание4.webp) no-repeat;
-}
-
-.edition-book5 {
-    background: url(../img/издания/издание5.webp) no-repeat;
-}
-
-.edition-book6 {
-    background: url(../img/издания/издание6.webp) no-repeat;
-}
-
-.edition-book7 {
-    background: url(../img/издания/издание7.webp) no-repeat;
+.wrapper {
+    padding-left: 40px;
+    margin: 0;
+    flex-basis: 75%;
+    overflow: hidden;
 }
 
 .swiper-edition {
     padding-left: 10px;
-    padding-top: 27px;
     max-width: 1160px;
     overflow: hidden;
 }
 
-.book__info {
-    padding-top: 418px;
+.edition-image {
+    width: 100%;
+}
+
+.edition-image-wrap {
+    margin-bottom: 20px;
+}
+
+.book-info {
     padding-bottom: 10px;
     color: var(--color-white);
 }
 
-.info__name__price {
+.info-name-price {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 5px;
 }
 
-.book__name {
+.book-name {
     font-family: 'OpenSans';
     font-weight: 700;
     font-size: 16px;
 }
 
-.book__price {
+.book-price {
     font-family: 'OpenSansItalic';
 }
 
-.book__author {
+.book-author {
     margin-bottom: 15px;
     font-family: 'OpenSans';
     font-weight: 400;
     font-size: 16px;
 }
 
-.book__order {
+.book-order {
     position: relative;
     padding: 8px 19px;
-    color: var(--color-white);
     width: fit-content;
     font-family: 'OpenSans';
     font-weight: 700;
     font-size: 16px;
     border: 3px solid var(--color-purple);
     border-radius: 100px;
+    color: var(--color-white);
 }
 
-.book__order::before {
+.book-order::before {
     content: '';
     position: absolute;
     display: block;
     top: -5px;
     left: -5px;
-    border-radius: 100px;
-    border: 2px soltransparent;
     height: calc(100% + 6px);
     width: calc(100% + 6px);
+    border-radius: 100px;
+    border: 2px solid transparent;
 }
 
-.book__order::after {
+.book-order::after {
     content: '';
     position: absolute;
     display: block;
     top: -7px;
     left: -7px;
-    border-radius: 100px;
-    border: 2px solid transparent;
     height: calc(100% + 10px);
     width: calc(100% + 10px);
+    border-radius: 100px;
+    border: 2px solid transparent;
 }
 
 .swiper-edition-btns {
-    padding-top: 9px;
-    margin-bottom: 32px;
-    padding-left: 0px;
+    padding-left: 10px;
+    margin-bottom: 29px;
+    padding-top: 30px;
 }
 
-.swiper-btn--prev__edition-pos::before {
-    right: 25px;
-    top: 2px;
+.swiper-pagination-edition {
+    width: fit-content;
+    text-align: center;
+    padding: 0;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
-.swiper-btn--prev__edition-pos::after {
-    right: 14px;
-    top: -7px;
+.edition-btn-prev::before {
+    top: calc(50% - 9px/2);
+    right: calc(50% - 9px/2);
 }
 
-.swiper-btn--next__edition-pos::before {
-    right: 32px;
-    top: 2px;
+.edition-btn-prev::after {
+    bottom: 0;
+    right: 0;
 }
 
-.swiper-btn--next__edition-pos::after {
-    right: 18px;
-    top: -7px;
+.edition-btn-next::before {
+    top: calc(50% - 9px/2);
+    left: calc(50% - 9px/2);
+}
+
+.edition-btn-next::after {
+    bottom: 0;
+    left: 0;
 }
 
 
 /* hover active focus */
 
-.edition__cheking:hover+.edition-check__text {
+.edition-cheking+.edition-check-text,
+.edition-cheking+.edition-check-text::before,
+.price-field,
+.book-order {
+    transition: color, border-color, background-color, border;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+}
+
+.edition-cheking:hover+.edition-check-text {
     color: var(--color-purple)
 }
 
-.edition__cheking:hover+.edition-check__text::before {
+.edition-cheking:hover+.edition-check-text::before {
     border-color: var(--color-purple);
 }
 
-.edition__cheking:focus+.edition-check__text {
+.edition-cheking:focus+.edition-check-text {
     color: var(--color-purple)
 }
 
-.edition__cheking:focus+.edition-check__text::before {
+.edition-cheking:focus+.edition-check-text::before {
     border-color: var(--color-purple);
 }
 
-.edition__cheking:checked+.edition-check__text {
+.edition-cheking:checked+.edition-check-text {
     color: var(--color-purple);
-    outline: 1px solid var(--color-purple);
 }
 
-.edition__cheking:checked+.edition-check__text::after {
+.edition-cheking:checked+.edition-check-text::after {
     opacity: 1;
 }
 
-.edition__cheking:checked+.edition-check__text::before {
+.edition-cheking:checked+.edition-check-text::before {
     border-color: var(--color-purple);
 }
 
@@ -341,19 +348,106 @@
     border: 1px solid var(--color-white);
 }
 
-.book__order:focus::after {
+.book-order:focus::after {
     border: 2px solid var(--color-hover);
 }
 
-.book__order:active::before {
+.book-order:active::before {
     border: 2px solid var(--color-white);
 }
 
-.book__order:active::after {
+.book-order:active::after {
     border: 2px solid transparent;
 }
 
-.book__order:hover {
+.book-order:hover {
     background-color: var(--color-hover);
     border: 3px solid transparent;
+}
+
+@media (max-width:1300px) {
+    .section-edition {
+        background: url(../img/издания1024.webp);
+    }
+    .section-edition__container {
+        padding-bottom: 80px;
+    }
+    .edition-image-wrap {
+        margin-bottom: 0px;
+    }
+    .book-name1024 {
+        display: block;
+    }
+    .book-hide1024 {
+        display: none;
+    }
+    .book-name1024 {
+        display: block;
+    }
+    .wrapper {
+        padding-left: unset;
+        flex-basis: 69%;
+    }
+    .edition-filter {
+        flex-basis: 31%;
+    }
+    .edition-price-filter {
+        margin-right: -100px;
+    }
+    .edition-image {
+        padding-bottom: 10px;
+        height: 320px;
+        width: 100%;
+    }
+}
+
+@media (max-width:885px) {
+    .section-edition {
+        background: url(../img/издания768.webp);
+    }
+    .section-edition__container {
+        flex-direction: column;
+        justify-content: unset;
+        padding-top: 88px;
+        padding-bottom: 69px;
+    }
+    .wrapper {
+        flex-basis: unset;
+    }
+    .swiper-edition {
+        max-width: 640px;
+        padding-left: 25px;
+    }
+    .edition-type {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 32px);
+        grid-auto-flow: column;
+        grid-column-gap: 55px;
+        margin-bottom: 25px;
+    }
+    .grid-check {
+        grid-row: 4/span 1;
+    }
+    .edition-check:not(:last-child) {
+        margin-bottom: 0px;
+    }
+    .edition-check {
+        height: fit-content;
+    }
+    .edition-price-filter {
+        margin-bottom: 20px;
+    }
+    .swiper-edition-btns {
+        padding-left: unset;
+    }
+}
+
+@media (max-width:760px) {
+    .swiper-edition {
+        max-width: calc(100vw - 100px);
+    }
+    .edition-type {
+        grid-row-gap: 10px;
+    }
 }
