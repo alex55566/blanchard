@@ -1,13 +1,13 @@
 let burger = document.querySelector('#burger')
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     let menu = document.querySelector('#menuhead')
     let check = document.querySelector('.opacity-menu')
     if (check === null) {
         menu.classList.toggle('is-active')
         burger.classList.toggle('open-menu')
         burger.classList.toggle('burgeranim')
-        setTimeout(function() {
+        setTimeout(function () {
             menu.classList.toggle('opacity-menu')
 
         }, 100)
@@ -16,7 +16,7 @@ burger.addEventListener('click', function() {
 
         burger.classList.toggle('open-menu')
         burger.classList.toggle('burgeranim')
-        setTimeout(function() {
+        setTimeout(function () {
             menu.classList.toggle('is-active')
         }, 500)
     }
@@ -52,18 +52,28 @@ showHideFind()
 function windowSizeCard() {
     let cards = document.querySelectorAll('.event-info')
     let check = document.querySelectorAll('.hide-card')
+    let btn = document.querySelector('.show-hide-events')
+
     if ($(window).width() <= '4200' && $(window).width() > '885') {
+        cards.forEach((card) => card.classList.remove('cards-show320'))
+        btn.classList.remove('btn-show320')
         cards[2].classList.remove('event-info-hide')
         cards[2].classList.remove('event-opacity')
         cards[2].classList.remove('hide-card')
         cards[2].classList.remove('opacity-card')
-    } else if ($(window).width() <= '885') {
+    } else if ($(window).width() <= '885' && $(window).width() > '650') {
+        cards.forEach((card) => card.classList.remove('cards-show320'))
+        btn.classList.remove('btn-show320')
         if (check.length != 0) {
             cards[2].classList.add('hide-card')
             cards[2].classList.add('opacity-card')
         }
         cards[2].classList.add('event-info-hide')
         cards[2].classList.add('event-opacity')
+    } else if ($(window).width() <= '650') {
+        cards.forEach((card) => card.classList.add('cards-show320'))
+        btn.classList.add('btn-show320')
+
     } else {
         // экран больше 600 px в ширниу
     }
@@ -71,6 +81,119 @@ function windowSizeCard() {
 $(window).load(windowSizeCard);
 $(window).resize(windowSizeCard);
 $(window).on('load resize', windowSizeCard);
+
+
+
+
+const slider = document.querySelector('.events-swiper-container');
+const inner = document.querySelector('.cards-event');
+const cards = document.querySelectorAll('.event-info')
+let mySwiper2;
+
+function mobileSlider() {
+    if ($(window).width() <= 650 && slider.dataset.mobile == 'false') {
+        inner.classList.add('swiper-wrapper')
+        mySwiper2 = new Swiper(slider, {
+            slidesPerGroup: 1,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            slideClass: 'event-info',
+            pagination: {
+                el: '.events-swiper-pagination',
+                clickable: true,
+            },
+        });
+        slider.dataset.mobile = 'true';
+    }
+    if ($(window).width() > 650) {
+        slider.dataset.mobile = 'false';
+        if (slider.classList.contains('swiper-initialized')) {
+            mySwiper2.pagination.destroy();
+            mySwiper2.destroy();
+            inner.classList.remove('swiper-wrapper')
+            inner.removeAttribute("aria-live");
+            inner.removeAttribute("id");
+            cards[1].classList.remove('event-info-hide')
+            cards[1].classList.remove('event-opacity')
+            cards[1].classList.remove('hide-card')
+            cards[1].classList.remove('opacity-card')
+            cards.forEach((el) => {
+                el.classList.remove("swiper-slide");
+                el.classList.remove("swiper-slide-duplicate-prev");
+                el.classList.remove("swiper-slide-duplicate-active");
+                el.classList.remove("swiper-slide-duplicate-next");
+                el.removeAttribute("role");
+                el.removeAttribute("aria-label");
+            })
+        }
+    }
+}
+mobileSlider()
+window.addEventListener('resize', () => {
+    mobileSlider();
+});
+
+
+
+function CardMobile2() {
+
+    let editionSwiper
+    const editionslider = document.querySelector('.swiper-edition');
+
+    function dekstopSlider() {
+        if ($(window).width() <= 650) {
+            editionslider.dataset.mobile = 'false';
+            if (editionslider.classList.contains('swiper-initialized')) {
+                editionSwiper.pagination.destroy();
+                editionSwiper.destroy();
+            }
+        }
+        if ($(window).width() > 650 && editionslider.dataset.mobile == 'false') {
+            editionslider.dataset.mobile = 'true';
+            editionSwiper = new Swiper(".swiper-edition", {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 50,
+                slideClass: 'edition-book',
+                pagination: {
+                    el: ".swiper-pagination-edition",
+                    type: "fraction"
+                },
+                navigation: {
+                    nextEl: ".edition-btn-next",
+                    prevEl: ".edition-btn-prev"
+                },
+                autoplay: {
+                    delay: 2000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                        spaceBetween: 34,
+                    },
+                    885: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                        spaceBetween: 49,
+                    },
+                    1400: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                        spaceBetween: 50,
+                    }
+                },
+            });
+        }
+    }
+    dekstopSlider()
+    window.addEventListener('resize', () => {
+        dekstopSlider()
+    });
+}
+CardMobile2()
 
 
 function windowSizeTab() {
@@ -124,7 +247,7 @@ let gallerySlider = new Swiper(".swiper-right-content", {
     spaceBetween: 30,
     pagination: {
         el: ".swiper-pagination-right",
-        type: "fraction",
+        type: "progressbar",
         clickable: true,
     },
     navigation: {
@@ -133,13 +256,6 @@ let gallerySlider = new Swiper(".swiper-right-content", {
     },
 
     breakpoints: {
-        // 320: {
-        //     slidesPerView: 1,
-        //     grid: {
-        //         rows: 1
-        //     },
-        //     spaceBetween: 0
-        // },
         1: {
             slidesPerView: 1,
             slidesPerGroup: 1,
@@ -156,7 +272,7 @@ let gallerySlider = new Swiper(".swiper-right-content", {
             },
             spaceBetween: 30,
         },
-        1450: {
+        1301: {
             slidesPerView: 3,
             slidesPerGroup: 3,
             grid: {
@@ -170,7 +286,7 @@ let gallerySlider = new Swiper(".swiper-right-content", {
     slideVisibleClass: 'slide-visible',
 
     on: {
-        init: function() {
+        init: function () {
             this.slides.forEach(slide => {
                 if (!slide.classList.contains('slide-visible')) {
                     slide.tabIndex = '-1';
@@ -179,7 +295,7 @@ let gallerySlider = new Swiper(".swiper-right-content", {
                 }
             });
         },
-        slideChange: function() {
+        slideChange: function () {
             this.slides.forEach(slide => {
                 if (!slide.classList.contains('slide-visible')) {
                     slide.tabIndex = '-1';
@@ -190,66 +306,14 @@ let gallerySlider = new Swiper(".swiper-right-content", {
         }
     }
 
-    // a11y: {
-    //     prevSlideMessage: 'Предыдущий',
-    //     nextSlideMessage: 'Следующий',
-    // }
-
 });
 
-
-let editionSwiper = new Swiper(".swiper-edition", {
-    slidesPerView: 3,
-    slidesPerGroup: 3,
-    spaceBetween: 50,
-    pagination: {
-        el: ".swiper-pagination-edition",
-        type: "fraction"
-    },
-    navigation: {
-        nextEl: ".edition-btn-next",
-        prevEl: ".edition-btn-prev"
-    },
-    autoplay: {
-        delay: 2000,
-        stopOnLastSlide: false,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        // 320: {
-        //     slidesPerView: 1,
-        //     grid: {
-        //         rows: 1
-        //     },
-        //     spaceBetween: 0
-        // },
-        320: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            spaceBetween: 34,
-        },
-        885: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            spaceBetween: 49,
-        },
-        1400: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-            spaceBetween: 50,
-        }
-    },
-});
 
 
 let projectsSwiper = new Swiper(".swiper-projects", {
     slidesPerView: 3,
     slidesPerGroup: 3,
     spaceBetween: 50,
-    // pagination: {
-    //     el: ".swiper-pagination--right",
-    //     type: "fraction"
-    // },
     navigation: {
         nextEl: ".projects-btn-next",
         prevEl: ".projects-btn-prev"
@@ -260,14 +324,12 @@ let projectsSwiper = new Swiper(".swiper-projects", {
         disableOnInteraction: true,
     },
     breakpoints: {
-        // 320: {
-        //     slidesPerView: 1,
-        //     grid: {
-        //         rows: 1
-        //     },
-        //     spaceBetween: 0
-        // },
-        320: {
+        1: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 0,
+        },
+        530: {
             slidesPerView: 2,
             slidesPerGroup: 2,
             spaceBetween: 34,
@@ -286,12 +348,11 @@ let projectsSwiper = new Swiper(".swiper-projects", {
 });
 
 
-document.querySelectorAll('.inside-menu').forEach(el => {
+document.querySelectorAll('.inside-menu-wrap').forEach(el => {
     new SimpleBar(el, {
         scrollbarMaxSize: 28
     });
 });
-
 
 
 const element = document.querySelector('select');
@@ -302,9 +363,7 @@ const choices = new Choices(element, {
 });
 
 
-
-
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
 
     function openMenu() {
 
@@ -315,105 +374,111 @@ window.addEventListener('DOMContentLoaded', function() {
 
         const buttonItems = document.querySelectorAll('.bottom-container-item');
 
+
         buttonItems.forEach((buttonItem) => buttonItem.addEventListener('click', (e) => {
             e.preventDefault();
 
-            let check = document.querySelector('.is-active')
 
-            let closeMenu = document.querySelector('.is-closed')
-            let closeMenufinal = document.querySelector('.is-closedfinal')
+            if (!e.target.matches('.inside-menu')) {
 
-            console.log(check)
-            console.log(closeMenu)
-            console.log(closeMenufinal)
+                let check = document.querySelector('.is-active')
 
-            if (check == null) {
-
-                openMenu = buttonItem.querySelector('.inside-menu');
-
-                openMenu.classList.remove('is-closed')
-                openMenu.classList.remove('is-closedfinal')
-                if (closeMenu != null) {
-                    closeMenu.classList.remove('is-closed')
-                    closeMenufinal.classList.remove('is-closedfinal')
-                }
-
-                console.log(openMenu)
-
-                openMenu.classList.toggle('is-active')
-                parentArrow = openMenu.parentNode
-                childArrow = parentArrow.querySelector('.bottom-container-link')
-                childArrow.classList.toggle('active-arrow')
-
-                let el = SimpleBar.instances.get(document.getElementsByClassName('inside-menu is-active')[0]);
-                let scroll = el.getScrollElement();
-                scroll.scrollTop = 0;
+                let closeMenu = document.querySelector('.is-closed')
+                let closeMenufinal = document.querySelector('.is-closedfinal')
 
 
-            } else {
-
-                if (check == buttonItem.querySelector('.inside-menu')) {
+                if (check == null) {
 
                     openMenu = buttonItem.querySelector('.inside-menu');
-                    console.log(openMenu)
 
-                    openMenu.classList.toggle('is-closed')
+                    openMenu.classList.remove('is-closed')
+                    openMenu.classList.remove('is-closedfinal')
+                    if (closeMenu != null) {
+                        closeMenu.classList.remove('is-closed')
+                        closeMenufinal.classList.remove('is-closedfinal')
+                    }
+
+
                     openMenu.classList.toggle('is-active')
-                    setTimeout(() => {
-                        openMenu.classList.toggle('is-closedfinal')
-                    }, 300)
-
                     parentArrow = openMenu.parentNode
                     childArrow = parentArrow.querySelector('.bottom-container-link')
                     childArrow.classList.toggle('active-arrow')
 
+                    let parent = document.getElementsByClassName('inside-menu is-active')[0]
+
+                    let el = SimpleBar.instances.get(parent.getElementsByClassName('inside-menu-wrap')[0]);
+                    let scroll = el.getScrollElement();
+                    scroll.scrollTop = 0;
+
+
                 } else {
 
-                    let active = document.querySelectorAll('.is-active')
-                    console.log(active)
-                    let closed = document.querySelectorAll('.is-closed')
-                    console.log(closed)
-                    let closedfinal = document.querySelectorAll('.is-closedfinal')
-                    console.log(closedfinal)
-                    let activeArrow = document.querySelectorAll('.active-arrow')
+                    if (check == buttonItem.querySelector('.inside-menu')) {
 
+                        openMenu = buttonItem.querySelector('.inside-menu');
 
-                    for (let i = 0; i < active.length; ++i) {
-                        active[i].classList.remove('is-active')
-                        active[i].classList.add('is-closed')
-                        setTimeout(() => {
-                            active[i].classList.add('is-closedfinal')
-                        }, 300)
-                        activeArrow[i].classList.remove('active-arrow')
-                        openMenu = buttonItem.querySelector('.inside-menu')
+                        openMenu.classList.toggle('is-closed')
                         openMenu.classList.toggle('is-active')
                         setTimeout(() => {
-                            active[i].classList.remove('is-closed')
-                            active[i].classList.remove('is-closedfinal')
-                        }, 500)
-
-                        console.log(openMenu)
-
+                            openMenu.classList.toggle('is-closedfinal')
+                        }, 300)
 
                         parentArrow = openMenu.parentNode
                         childArrow = parentArrow.querySelector('.bottom-container-link')
                         childArrow.classList.toggle('active-arrow')
 
-                        let el = SimpleBar.instances.get(document.getElementsByClassName('inside-menu is-active')[0]);
-                        let scroll = el.getScrollElement();
-                        scroll.scrollTop = 0;
+                    } else {
+
+                        let active = document.querySelectorAll('.is-active')
+
+                        let closed = document.querySelectorAll('.is-closed')
+
+                        let closedfinal = document.querySelectorAll('.is-closedfinal')
+
+                        let activeArrow = document.querySelectorAll('.active-arrow')
+
+
+                        for (let i = 0; i < active.length; ++i) {
+                            active[i].classList.remove('is-active')
+                            active[i].classList.add('is-closed')
+                            setTimeout(() => {
+                                active[i].classList.add('is-closedfinal')
+                            }, 300)
+                            activeArrow[i].classList.remove('active-arrow')
+                            openMenu = buttonItem.querySelector('.inside-menu')
+                            openMenu.classList.toggle('is-active')
+                            setTimeout(() => {
+                                active[i].classList.remove('is-closed')
+                                active[i].classList.remove('is-closedfinal')
+                            }, 500)
+
+
+
+
+                            parentArrow = openMenu.parentNode
+                            childArrow = parentArrow.querySelector('.bottom-container-link')
+                            childArrow.classList.toggle('active-arrow')
+
+
+
+                            let parent = document.getElementsByClassName('inside-menu is-active')[0]
+
+                            let el = SimpleBar.instances.get(parent.getElementsByClassName('inside-menu-wrap')[0]);
+                            let scroll = el.getScrollElement();
+                            scroll.scrollTop = 0;
+
+                        }
                     }
                 }
-
             }
-
         }))
 
         window.addEventListener('click', e => {
             const target = e.target
             if (typeof openMenu === "object") {
 
-                if (!target.closest('.inside-menu__inside') && !target.closest('.bottom-container-item')) {
+                if (!target.closest('.bottom-container-item') && !target.closest('.insidecheck')) {
+
                     openMenu.classList.remove('is-active')
                     openMenu.classList.add('is-closed')
                     setTimeout(() => {
@@ -428,6 +493,59 @@ window.addEventListener('DOMContentLoaded', function() {
 
     openMenu()
 
+    function openEdition() {
+        let hideDesign = document.querySelector('.design320')
+        let hideDesigncheck = document.querySelector('.designchecking320')
+        let check
+
+        hideDesign.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (hideDesigncheck.classList.contains('recheck')) {
+                hideDesigncheck.checked = true
+                hideDesigncheck.classList.toggle('recheck')
+            } else {
+                hideDesigncheck.checked = false
+                hideDesigncheck.classList.toggle('recheck')
+            }
+        })
+
+
+        hideDesign.addEventListener('click', (e) => {
+            e.preventDefault()
+            check = document.querySelector('.is-active320')
+            if (check == null) {
+                hideDesign.classList.add('is-closed-design320')
+                hideDesign.classList.toggle('toggle-design320')
+            } else {
+                hideDesign.classList.toggle('toggle-design320')
+            }
+        })
+
+        let btn = document.querySelector('.checkbox-edition')
+        let hideEditions = document.querySelectorAll('.hide320')
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            check = document.querySelector('.is-active320')
+            if (check == null) {
+                btn.classList.toggle('active-arrow320')
+                hideEditions.forEach((hideEdition) => hideEdition.classList.remove('is-closedfinal320'))
+                hideEditions.forEach((hideEdition) => hideEdition.classList.remove('is-closed320'))
+                hideEditions.forEach((hideEdition) => hideEdition.classList.add('is-active320'))
+                hideDesign.classList.remove('is-closed-design320')
+            } else {
+                btn.classList.toggle('active-arrow320')
+                hideEditions.forEach((hideEdition) => hideEdition.classList.remove('is-active320'))
+                hideEditions.forEach((hideEdition) => hideEdition.classList.add('is-closed320'))
+                setTimeout(() => {
+                    hideEditions.forEach((hideEdition) => hideEdition.classList.add('is-closedfinal320'))
+                }, 300)
+                if (hideDesign.classList.contains('toggle-design320')) {
+                    hideDesign.classList.add('is-closed-design320')
+                }
+            }
+        })
+    }
+    openEdition()
 
 
     function popup() {
@@ -442,7 +560,7 @@ window.addEventListener('DOMContentLoaded', function() {
         if (popupLinks.length > 0) {
             for (let i = 0; i < popupLinks.length; ++i) {
                 const popupLink = popupLinks[i];
-                popupLink.addEventListener('click', function(e) {
+                popupLink.addEventListener('click', function (e) {
                     const popupName = popupLink.id
                     const popupIdentif = String(popupName)
                     const curentPopup = document.querySelector(`.${popupIdentif}`);
@@ -457,7 +575,7 @@ window.addEventListener('DOMContentLoaded', function() {
         if (popupCloseIcon.length > 0) {
             for (let i = 0; i < popupCloseIcon.length; ++i) {
                 const el = popupCloseIcon[i];
-                el.addEventListener('click', function(e) {
+                el.addEventListener('click', function (e) {
                     popupClose(el.closest('.popup'));
                     e.preventDefault();
                 });
@@ -468,7 +586,7 @@ window.addEventListener('DOMContentLoaded', function() {
             if (curentPopup && unlock) {
                 bodyLock()
                 curentPopup.classList.add('open');
-                curentPopup.addEventListener('click', function(e) {
+                curentPopup.addEventListener('click', function (e) {
                     if (!e.target.closest('.popup__content')) {
                         popupClose(e.target.closest('.popup'))
 
@@ -482,6 +600,9 @@ window.addEventListener('DOMContentLoaded', function() {
             const lockPaddingValue = window.innerWidth - document.querySelector('.section-gallery').offsetWidth + 'px';
 
             body.style.paddingRight = lockPaddingValue
+            console.log(lockPaddingValue)
+            console.log(window.innerWidth)
+            console.log(document.querySelector('.section-gallery').offsetWidth)
             body.classList.add('lock')
 
             unlock = false
@@ -497,7 +618,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         function bodyUnlock() {
-            setTimeout(function() {
+            setTimeout(function () {
                 body.style.paddingRight = '0px';
                 body.classList.remove('lock');
 
@@ -512,7 +633,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             let check = document.querySelector('.popup.open')
             if (e.which === 27 && check != null) {
                 const popupActive = document.querySelector('.popup.open')
@@ -536,7 +657,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        $(function() {
+        $(function () {
             $(".accordion").accordion({
 
                 // сворачивает
@@ -561,13 +682,13 @@ window.addEventListener('DOMContentLoaded', function() {
     function allTabs() {
 
         let page
-            // console.log(page)
+
 
         function insideTabs() {
-            document.querySelectorAll('.interval-accordion-but').forEach(function(tabsBtn) {
-                tabsBtn.addEventListener('click', function(e) {
+            document.querySelectorAll('.interval-accordion-but').forEach(function (tabsBtn) {
+                tabsBtn.addEventListener('click', function (e) {
                     const path = e.currentTarget.dataset.path
-                        // console.log(path)
+
 
                     if (typeof page == 'undefined') {
 
@@ -575,12 +696,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         let itemsPage = itemsGroup.querySelectorAll('.inside-tabcontent')
                         let itemClass = itemsGroup.querySelectorAll('.interval-accordion-but')
 
-                        itemsPage.forEach(function(allPainter) {
+                        itemsPage.forEach(function (allPainter) {
                             allPainter.classList.remove('inside-tabcontent-active')
                         })
                         document.querySelector(`[data-target="${path}"]`).classList.add('inside-tabcontent-active')
 
-                        itemClass.forEach(function(painterBut) {
+                        itemClass.forEach(function (painterBut) {
                             painterBut.classList.remove('active-name')
                         })
 
@@ -591,12 +712,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         let itemsPage = itemsGroup.querySelectorAll('.inside-tabcontent')
                         let itemClass = itemsGroup.querySelectorAll('.interval-accordion-but')
 
-                        itemsPage.forEach(function(allPainter) {
+                        itemsPage.forEach(function (allPainter) {
                             allPainter.classList.remove('inside-tabcontent-active')
                         })
                         document.querySelector(`[data-target="${path}"]`).classList.add('inside-tabcontent-active')
 
-                        itemClass.forEach(function(painterBut) {
+                        itemClass.forEach(function (painterBut) {
                             painterBut.classList.remove('active-name')
                         })
                     }
@@ -613,19 +734,19 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
         function outsideTabs() {
-            document.querySelectorAll('.catalog-tabs-btn').forEach(function(tabsBtn) {
-                tabsBtn.addEventListener('click', function(e) {
+            document.querySelectorAll('.catalog-tabs-btn').forEach(function (tabsBtn) {
+                tabsBtn.addEventListener('click', function (e) {
                     const path = e.currentTarget.dataset.path
                     page = e.currentTarget.dataset.path
-                        // console.log(path)
 
-                    document.querySelectorAll('.outside-tabcontent').forEach(function(allPainter) {
+
+                    document.querySelectorAll('.outside-tabcontent').forEach(function (allPainter) {
                         allPainter.classList.remove('outside-tabcontent-active')
-                            // console.log(allPainter)
+
                     })
                     document.querySelector(`[data-target="${path}"]`).classList.add('outside-tabcontent-active')
 
-                    document.querySelectorAll('.catalog-tabs-btn').forEach(function(painterBut) {
+                    document.querySelectorAll('.catalog-tabs-btn').forEach(function (painterBut) {
                         painterBut.classList.remove('active-butt')
                     })
                     const activeBut = e.target.closest('.catalog-tabs-btn');
@@ -652,13 +773,10 @@ window.addEventListener('DOMContentLoaded', function() {
             if ($(window).width() > '885') {
 
                 if (check.length === 0) {
-                    console.log(check)
-
-
                     arrayCards[3].classList.toggle('hide-card')
                     arrayCards[4].classList.toggle('hide-card')
 
-                    setTimeout(function() {
+                    setTimeout(function () {
 
 
                         opacityCards[0].classList.toggle('opacity-card')
@@ -674,7 +792,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     opacityCards[1].classList.toggle('opacity-card')
 
 
-                    setTimeout(function() {
+                    setTimeout(function () {
 
                         arrayCards[3].classList.toggle('hide-card')
                         arrayCards[4].classList.toggle('hide-card')
@@ -685,13 +803,12 @@ window.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 if (check.length === 0) {
-                    console.log(check)
 
                     arrayCards[2].classList.toggle('hide-card')
                     arrayCards[3].classList.toggle('hide-card')
                     arrayCards[4].classList.toggle('hide-card')
 
-                    setTimeout(function() {
+                    setTimeout(function () {
 
 
                         opacityCards[0].classList.toggle('opacity-card')
@@ -709,7 +826,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     opacityCards[2].classList.toggle('opacity-card')
 
 
-                    setTimeout(function() {
+                    setTimeout(function () {
 
                         arrayCards[2].classList.toggle('hide-card')
                         arrayCards[3].classList.toggle('hide-card')
@@ -810,13 +927,13 @@ window.addEventListener('DOMContentLoaded', function() {
                 function: 'Введите верный формат телефона'
             },
         },
-        submitHandler: function(form) {
+        submitHandler: function (form) {
             let formData = new FormData(form); //объект, куда попадают все данные из формы
 
             let xhr = new XMLHttpRequest(); //запрос, аналог ajax
 
 
-            xhr.onreadystatechange = function() { //проверка статуса отправки
+            xhr.onreadystatechange = function () { //проверка статуса отправки
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         console.log('Отправлено');

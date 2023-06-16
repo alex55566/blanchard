@@ -1,6 +1,7 @@
     /* contacts */
     
-    .social1024 {
+    .social1024,
+    .social320 {
         display: none;
     }
     
@@ -151,7 +152,8 @@
     }
     /* footer */
     
-    .social-footer1024 {
+    .social-footer1024,
+    .social-footer320 {
         display: none;
     }
     
@@ -314,5 +316,151 @@
         }
         .map {
             min-height: 757px;
+        }
+    }
+    
+    @media (max-width:650px) {
+        .contacts-info {
+            flex-direction: column-reverse;
+        }
+        .contacts-title {
+            margin-bottom: unset;
+        }
+        .section-contacts__container {
+            padding-bottom: 75px;
+        }
+        .section-inside {
+            position: relative;
+        }
+        .form-nameshop {
+            position: absolute;
+            top: -58px;
+            left: 15px;
+            font-size: 18px;
+        }
+        .form-nameaddress {
+            position: absolute;
+            top: -33px;
+            left: 15px;
+            font-size: 14px;
+        }
+        .map {
+            min-height: unset;
+            height: 320px;
+        }
+        .client-info-order {
+            font-size: 18px;
+        }
+        .contacts-form {
+            padding-top: 25px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            border: unset;
+        }
+        .inside-form-container {
+            padding-left: unset;
+        }
+        .form-client-info {
+            margin-bottom: 25px;
+        }
+        .client-info-order {
+            margin-bottom: 21px;
+        }
+        .client-info-field {
+            margin-bottom: 20px;
+            min-width: unset;
+            width: 100%;
+        }
+        .add-client {
+            width: fit-content;
+            font-size: 12px;
+            padding: 12px 33px;
+        }
+        .contacts-messanger {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .social1024 {
+            display: none;
+        }
+        .social320 {
+            display: block;
+        }
+        .messanger-link {
+            margin-top: 12px;
+        }
+        .messanger:first-child {
+            margin-right: 20px;
+        }
+        .section-footer__container {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding-top: 30px;
+        }
+        .social-footer1024 {
+            display: none;
+        }
+        .social-footer320 {
+            display: block;
+        }
+        .footer-social {
+            margin-bottom: 20px;
+        }
+        .myname+.js-validate-error-label {
+            bottom: 148px;
+        }
+        .mytel+.js-validate-error-label {
+            bottom: 87px;
+        }
+        /* hover */
+        .client-info-field:hover {
+            background-color: var(--color-white)
+        }
+        .client-info-field:focus {
+            background-color: #EAEAEA;
+        }
+        .add-client:hover {
+            border: 2px solid var(--color-purple);
+            background-color: transparent;
+            color: var(--color-purple);
+        }
+        .add-client:focus::before {
+            border: 2px solid var(--color-active);
+        }
+        .add-client:focus {
+            border: 2px solid #D1A9F0;
+            background-color: var(--color-white);
+            color: var(--color-hover);
+        }
+        .add-client:active::before {
+            border: 2px solid var(--color-active);
+        }
+        .add-client:active {
+            border: 2px solid #D1A9F0;
+            background-color: var(--color-hover);
+            color: var(--color-white);
+        }
+        .social:hover {
+            filter: unset;
+            opacity: 1;
+        }
+        .link-social:focus .social {
+            filter: none;
+            opacity: 0.5;
+        }
+        .social:active {
+            filter: none;
+            opacity: 0.5;
+            border: .5px solid var(--color-hover);
+        }
+        .social-footer:hover {
+            fill: #CACACA;
+        }
+        .footer-application-link:focus .social-footer {
+            fill: var(--color-white);
+        }
+        .social-footer:active {
+            fill: var(--color-active);
         }
     }

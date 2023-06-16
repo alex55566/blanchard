@@ -153,6 +153,7 @@
         --color-purple: rgba(157, 92, 208, 1);
         --color-dropdown: rgba(0, 0, 0, 0.6);
         --color-grey: rgba(153, 153, 153, 1);
+        --color-grey2: rgba(202, 202, 202, 1);
         --color-hover: #C283F3;
         --color-active: #7943A4;
         /* gaps */
@@ -180,6 +181,14 @@
         .container {
             margin: 0 auto;
             padding: 0 50px;
+            max-width: 769px;
+        }
+    }
+    
+    @media (max-width:650px) {
+        .container {
+            margin: 0 auto;
+            padding: 0 15px;
             max-width: 769px;
         }
     }
